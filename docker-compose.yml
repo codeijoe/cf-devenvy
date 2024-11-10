@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  devcontainer:
+    #build: builder/.
+    build:
+      context: ./builder
+      args:
+        - MYAPP_IMAGE=${BASE_OS_IMAGE}:${BASE_OS_TAG}
+        - DEVENVY_WORKSPACE=${DEVENVY_WORKSPACE}
+        - IMAGE=${BASE_OS_IMAGE}
+        - TAG=${BASE_OS_TAG}
+    image: ${DEVENVY_IMAGE}:${DEVENVY_TAG}
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "${DEVENVY_WORKSPACE}:${DEVENVY_WORKSPACE}"
+

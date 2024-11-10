@@ -1,0 +1,17 @@
+# NOTES
+
+## System Border
+A. Core DevMode System Rules:
+- Code as Single Source Of Truth (SSOT)
+- Run on `kzenlab`
+- Run entirely on top of Docker
+- Run local(docker local) and remote (docker hosting)
+- Development environment manage by docker-compose
+ 
+B. Alternative Remote DevMode 
+B.1 Codespace
+B.2 Gitpod
+
+## Features
+Core Features:
+- [ ]   
